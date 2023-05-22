@@ -1,0 +1,14 @@
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: User made some changes
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: Updated data sent to server
+    activate server
+    server-->>browser: 201 
+    deactivate server
+    
+    Note right of browser: No need to fetch files
